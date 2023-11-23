@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'frontMicroservice'`, () => {
+  it(`should have as title 'pay-my-buddy-front'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('frontMicroservice');
+    expect(app.title).toEqual('pay-my-buddy-front');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('frontMicroservice app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('pay-my-buddy-front app is running!');
   });
 });
