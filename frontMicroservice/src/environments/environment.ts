@@ -8,6 +8,9 @@ export const environment = {
   apiContact: 'contact',
   apiTransfer:'transaction',
   apiUser: 'user',
+  apiPatient: 'patients',
+  apiDanger: 'danger',
+  apiNotes: 'notes',
 };
 
 /*

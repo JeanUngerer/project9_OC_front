@@ -12,7 +12,7 @@ import { ErrorMessageComponent } from './shared/components/error-message/error-m
 import { HomeComponent } from './component/home/home.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { UserInfoComponent } from './component/user-info/user-info.component';
-import { TransferComponent } from './component/transfer/transfer.component';
+import { PatientsComponent } from './component/transfer/patients.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
@@ -30,7 +30,7 @@ import { GoogleCallbackComponent } from './component/login/providerCallbacks/goo
     ErrorMessageComponent,
     HomeComponent,
     UserInfoComponent,
-    TransferComponent,
+    PatientsComponent,
     ContactsComponent,
     RegistrationComponent,
     GithubCallbackComponent,

@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userService.isUser().subscribe({next: res => {this.welcomeText = res.message; console.log("RES : ", this.welcomeText);}});
+    //this.userService.isUser().subscribe({next: res => {this.welcomeText = res.message; console.log("RES : ", this.welcomeText);}});
 
     if (this.authService.isLoggedIn()){
       this.userService.handleBalanceUpdate();

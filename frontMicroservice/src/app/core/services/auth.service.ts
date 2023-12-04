@@ -36,19 +36,20 @@ export class AuthService {
             } ),
           observe: 'response'
         })
-      .pipe(tap((r) => {console.log("TOKENNN : ", r.headers.get('Token')),
+      .pipe(tap((r) => {
+        console.log("RESPONSE TOK : ", r); console.log("TOKENNN : ", r.headers.get('Token')),
           this.createSession(r.headers.get('Token'))
       }));
   }
 
-  register ({username, email, password, firstname, lastname}: {username : string, email : string, password : string, firstname : string, lastname : string}){
-    return this.apiService.putNoAuth(`/register`,
+  register ({userName, mail, password, firstName, lastName}: {userName : string, mail : string, password : string, firstName : string, lastName : string}){
+    return this.apiService.postNoAuth(`/register`,
 {
-        username : username,
-        mail : email,
+        userName : userName,
+        email : mail,
         password : password,
-        firstname : firstname,
-        lastname : lastname
+        firstName : firstName,
+        lastName : lastName
     })
   }
 

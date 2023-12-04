@@ -7,7 +7,7 @@ import {HomeComponent} from "./component/home/home.component";
 import {AuthGuard} from "./core/guards/auth.guard";
 import {AppComponent} from "./app.component";
 import {UserInfoComponent} from "./component/user-info/user-info.component";
-import {TransferComponent} from "./component/transfer/transfer.component";
+import {PatientsComponent} from "./component/transfer/patients.component";
 import {ContactsComponent} from "./component/contacts/contacts.component";
 import {RegistrationComponent} from "./component/registration/registration.component";
 
@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'transfer',
-    component: TransferComponent,
+    component: PatientsComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
   },
