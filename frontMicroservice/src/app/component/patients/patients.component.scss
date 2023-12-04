@@ -3,7 +3,6 @@
 .transferModal {
   box-sizing: border-box;
   background-color: whitesmoke;
-  border-radius: 1em;
   border: 3px solid black;
   box-shadow: grey;
   width: 100%;
@@ -50,6 +49,13 @@
 
 .label{
   margin-top: 1rem;
+}
+
+.clickable{
+  cursor: pointer;
+  &:hover {
+    background: lightgreen;
+  }
 }
 
 

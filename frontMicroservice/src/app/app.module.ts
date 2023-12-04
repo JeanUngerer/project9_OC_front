@@ -12,7 +12,7 @@ import { ErrorMessageComponent } from './shared/components/error-message/error-m
 import { HomeComponent } from './component/home/home.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { UserInfoComponent } from './component/user-info/user-info.component';
-import { PatientsComponent } from './component/transfer/patients.component';
+import { PatientsComponent } from './component/patients/patients.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
@@ -20,6 +20,8 @@ import {MatTableModule} from "@angular/material/table";
 import { NgSelectModule } from '@ng-select/ng-select';
 import { GithubCallbackComponent } from './component/login/providerCallbacks/github-callback/github-callback.component';
 import { GoogleCallbackComponent } from './component/login/providerCallbacks/google-callback/google-callback.component';
+import { NewPatientComponent } from './component/patients/new-patient/new-patient.component';
+import { PatientDetailComponent } from './component/patients/patient-detail/patient-detail.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { GoogleCallbackComponent } from './component/login/providerCallbacks/goo
     ContactsComponent,
     RegistrationComponent,
     GithubCallbackComponent,
-    GoogleCallbackComponent
+    GoogleCallbackComponent,
+    NewPatientComponent,
+    PatientDetailComponent
   ],
   imports: [
     BrowserModule,

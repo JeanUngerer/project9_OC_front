@@ -7,9 +7,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../core/services/user.service";
 import {AuthService} from "../../core/services/auth.service";
 import {Patient} from "../../core/models/patient.model";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-transfer',
+  selector: 'app-patients',
   templateUrl: './patients.component.html',
   styleUrls: ['./patients.component.scss']
 })
@@ -29,6 +30,7 @@ export class PatientsComponent implements OnInit{
     private patientService: PatientService,
     private contactService: ContactService,
     private userService: UserService,
+    private router: Router,
 
     private authService: AuthService,
   ) {}
@@ -51,5 +53,15 @@ export class PatientsComponent implements OnInit{
     );
   }
 
+
+  newPatient(){
+    this.router.navigate(['./newPatient']);
+  }
+
+  handleClickRow(p: Patient){
+    if (p.id) {
+      this.router.navigate([`patient/${p.id}`]);
+    }
+  }
 
 }

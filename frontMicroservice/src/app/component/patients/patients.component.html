@@ -30,7 +30,8 @@
 
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+              (click)="handleClickRow(row)" class="clickable"></tr>
         </table>
 
         <mat-paginator
@@ -39,6 +40,11 @@
           showFirstLastButtons
         >
         </mat-paginator>
+
+
+        <button (click)="newPatient()" class="button button-validate button-home">
+          Add new patient
+        </button>
 
       </div>
 

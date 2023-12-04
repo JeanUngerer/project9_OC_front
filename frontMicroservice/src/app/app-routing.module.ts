@@ -7,9 +7,11 @@ import {HomeComponent} from "./component/home/home.component";
 import {AuthGuard} from "./core/guards/auth.guard";
 import {AppComponent} from "./app.component";
 import {UserInfoComponent} from "./component/user-info/user-info.component";
-import {PatientsComponent} from "./component/transfer/patients.component";
+import {PatientsComponent} from "./component/patients/patients.component";
 import {ContactsComponent} from "./component/contacts/contacts.component";
 import {RegistrationComponent} from "./component/registration/registration.component";
+import {NewPatientComponent} from "./component/patients/new-patient/new-patient.component";
+import {PatientDetailComponent} from "./component/patients/patient-detail/patient-detail.component";
 
 const routes: Routes = [
   {
@@ -39,12 +41,20 @@ const routes: Routes = [
     component: RegistrationComponent
   },
   {
+    path: 'newPatient',
+    component: NewPatientComponent
+  },
+  {
     path: 'login/callback/github',
     component: GithubCallbackComponent
   },
   {
     path: 'login/callback/google',
     component: GoogleCallbackComponent
+  },
+  {
+    path: 'patient/:id',
+    component: PatientDetailComponent,
   },
   {
     path: 'login',

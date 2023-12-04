@@ -5,24 +5,25 @@ import {Observable} from "rxjs";
 import {MyTransfersDTO, Transfer, TransferToSend} from "../models/transfer.model";
 import {environment} from "../../../environments/environment";
 import {Patient} from "../models/patient.model";
+import {Notes} from "../models/notes.model";
 
 @Injectable({
   providedIn: 'root'
 })
-export class PatientService {
+export class NoteService {
 
   constructor(private  apiService: ApiService) { }
 
-  myPatients(): Observable<Patient[]> {
-    return this.apiService.get(`/${environment.apiPatient}/patient/patients`);
+  patientNotes(patientID: number): Observable<Notes[]> {
+    return this.apiService.get(`/${environment.apiNotes}/patient/${patientID}`);
   }
 
-  newPatient(newPatient: Patient): Observable<Patient>{
-    return this.apiService.put(`/${environment.apiPatient}/patient/create`, newPatient);
+  newNote(newNote: Notes): Observable<Notes>{
+    return this.apiService.put(`/${environment.apiNotes}/create`, newNote);
   }
 
-  onePatient(id: number): Observable<Patient>{
-    return this.apiService.get(`/${environment.apiPatient}/patient/${id}`);
+  oneNote(id: number): Observable<Notes>{
+    return this.apiService.get(`/${environment.apiNotes}/${id}`);
   }
 
 }
