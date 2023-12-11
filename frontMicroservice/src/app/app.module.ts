@@ -22,6 +22,9 @@ import { GithubCallbackComponent } from './component/login/providerCallbacks/git
 import { GoogleCallbackComponent } from './component/login/providerCallbacks/google-callback/google-callback.component';
 import { NewPatientComponent } from './component/patients/new-patient/new-patient.component';
 import { PatientDetailComponent } from './component/patients/patient-detail/patient-detail.component';
+import { NewNoteModalComponent } from './component/patients/new-note-modal/new-note-modal.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -38,7 +41,8 @@ import { PatientDetailComponent } from './component/patients/patient-detail/pati
     GithubCallbackComponent,
     GoogleCallbackComponent,
     NewPatientComponent,
-    PatientDetailComponent
+    PatientDetailComponent,
+    NewNoteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { PatientDetailComponent } from './component/patients/patient-detail/pati
     MatTableModule,
     NgSelectModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

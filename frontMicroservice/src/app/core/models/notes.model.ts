@@ -1,9 +1,9 @@
 export interface Notes {
-  _id: number;
+  _id: number | null;
 
   patientId: number;
 
-  dateTime: Date;
+  dateTime: Date | null;
 
   note: string;
 }
