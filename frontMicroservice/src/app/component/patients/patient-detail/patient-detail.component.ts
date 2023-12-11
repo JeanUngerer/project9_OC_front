@@ -11,6 +11,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {NewNoteModalComponent} from "../new-note-modal/new-note-modal.component";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {DangerService} from "../../../core/services/danger.service";
 
 @Component({
   selector: 'app-patient-detail',
@@ -30,6 +31,8 @@ export class PatientDetailComponent implements OnInit{
 
   patient!: Patient;
 
+  patientRisk = "0";
+
   constructor(
     private route: ActivatedRoute,
     private patientService: PatientService,
@@ -39,6 +42,7 @@ export class PatientDetailComponent implements OnInit{
     private router: Router,
     private dialog: MatDialog,
     private authService: AuthService,
+    private dangerService: DangerService,
   ) {
   }
   ngOnInit(): void {
@@ -49,6 +53,7 @@ export class PatientDetailComponent implements OnInit{
       this.patientService.onePatient(this.patientId).subscribe(r => {this.patient = r;
         console.log(r)});
       this.refreshNotesList();
+      this.refreshPatientRisk();
 
     });
     this.authService.getUsername().subscribe({next: name => name? this.myUsername = name : this.myUsername = "notAuthenticated"});
@@ -60,6 +65,17 @@ export class PatientDetailComponent implements OnInit{
         console.log("RESULT : ", r);
         this.notes = r;
         this.dataSource = new MatTableDataSource<Notes>(this.notes);
+      },
+      error:(err) => console.log("ERROR : ", err)}
+    );
+  }
+
+  refreshPatientRisk(){
+    this.dangerService.patientRisk(this.patientId).subscribe({
+      next:(r) => {
+        console.log("RESULT : ", r);
+        this.patientRisk = r;
+
       },
       error:(err) => console.log("ERROR : ", err)}
     );
@@ -92,7 +108,10 @@ export class PatientDetailComponent implements OnInit{
     dialogRef.afterClosed().subscribe((note) => {
       const notes: Notes = {_id: null, note: note, patientId: this.patientId, dateTime: null}
       if (note){
-        this.noteService.newNote(notes).subscribe(res => this.refreshNotesList())
+        this.noteService.newNote(notes).subscribe(res => {
+          this.refreshNotesList();
+          this.refreshPatientRisk();
+        })
       }
     });
 
