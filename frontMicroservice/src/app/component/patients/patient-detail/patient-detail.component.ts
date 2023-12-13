@@ -73,11 +73,11 @@ export class PatientDetailComponent implements OnInit{
   refreshPatientRisk(){
     this.dangerService.patientRisk(this.patientId).subscribe({
       next:(r) => {
-        console.log("RESULT : ", r);
-        this.patientRisk = r;
+        console.log("RESULT RISK : ", r);
+        this.patientRisk = r.status;
 
       },
-      error:(err) => console.log("ERROR : ", err)}
+      error:(err) => console.log("ERROR RISK : ", err)}
     );
   }
 
