@@ -114,7 +114,35 @@ export class PatientDetailComponent implements OnInit{
         })
       }
     });
-
   }
+
+  editNote(id: string, noteValue: string): void {
+    const dialogConfig = new MatDialogConfig();
+
+    let machineTypeCompo;
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.width = '60em';
+    dialogConfig.height = '40em';
+    dialogConfig.data = {patientId: this.patientId, content: noteValue};
+
+    const dialogRef = this.dialog.open(
+      NewNoteModalComponent,
+      dialogConfig
+    );
+
+    dialogRef.afterClosed().subscribe((note) => {
+      const notes: Notes = {_id: id, note: note, patientId: this.patientId, dateTime: null}
+      if (note){
+        this.noteService.updateNote(notes).subscribe(res => {
+          this.refreshNotesList();
+          this.refreshPatientRisk();
+        })
+      }
+    });
+  }
+
 
 }

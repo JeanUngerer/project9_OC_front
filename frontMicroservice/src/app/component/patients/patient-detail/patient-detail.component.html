@@ -38,7 +38,7 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-            (click)="handleClickRow(row)" class="clickable"></tr>
+            (click)="editNote(row.element._id, row.element.note)" class="clickable"></tr>
       </table>
 
       <mat-paginator

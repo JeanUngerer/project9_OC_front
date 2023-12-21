@@ -26,4 +26,8 @@ export class NoteService {
     return this.apiService.get(`/${environment.apiNotes}/${id}`);
   }
 
+  updateNote(newNote: Notes): Observable<Notes>{
+    return this.apiService.post(`/${environment.apiNotes}/update`, newNote);
+  }
+
 }

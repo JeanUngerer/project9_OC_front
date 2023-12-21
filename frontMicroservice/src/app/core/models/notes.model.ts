@@ -1,5 +1,5 @@
 export interface Notes {
-  _id: number | null;
+  _id: string | null;
 
   patientId: number;
 
