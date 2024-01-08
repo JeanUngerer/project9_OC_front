@@ -1,28 +1,30 @@
-<h2 mat-dialog-title>New note</h2>
+<div class="modal-coantainer">
+  <h2 mat-dialog-title>New note</h2>
 
-<mat-dialog-content  class="modal-form">
-
-
-  <div class="modal-form" >
-    <mat-label class="label">Note</mat-label>
-    <textarea class="modal-form"
-              matInput
-              type="text"
-              placeholder="Note"
+  <mat-dialog-content  class="modal-form">
 
 
-              [(ngModel)]="this.form.value.note"
-    ></textarea>
-
-  </div>
-
-
-
-
-</mat-dialog-content>
+    <div class="modal-form" >
+      <mat-label class="label"></mat-label>
+      <textarea class="modal-form"
+                matInput
+                type="text"
+                placeholder="Note"
 
 
-<mat-dialog-actions>
-  <button class="button"(click)="close()">Close</button>
-  <button class="button button-primary"(click)="save()">Save</button>
-</mat-dialog-actions>
+                [(ngModel)]="this.form.value.note"
+      ></textarea>
+
+    </div>
+
+
+
+
+  </mat-dialog-content>
+
+
+  <mat-dialog-actions align="center">
+    <button class="button"(click)="close()">Close</button>
+    <button class="button button-primary"(click)="save()">Save</button>
+  </mat-dialog-actions>
+</div>

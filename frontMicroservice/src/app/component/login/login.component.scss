@@ -15,7 +15,6 @@
 .loginModal {
   box-sizing: border-box;
   background-color: whitesmoke;
-  border-radius: 1em;
   border: 3px solid black;
   box-shadow: grey;
   width: 20vw;
@@ -47,6 +46,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: content-box;
 }
 
 .button-home{
@@ -90,4 +90,14 @@
   height: auto;
   padding: 0.6rem 0;
   margin-right: 15px;
+}
+
+.input{
+  width: 10em;
+  justify-content: start;
+}
+
+.form-group{
+  justify-content: center;
+  width: 100%;
 }

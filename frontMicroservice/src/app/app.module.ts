@@ -18,8 +18,6 @@ import { RegistrationComponent } from './component/registration/registration.com
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import { NgSelectModule } from '@ng-select/ng-select';
-import { GithubCallbackComponent } from './component/login/providerCallbacks/github-callback/github-callback.component';
-import { GoogleCallbackComponent } from './component/login/providerCallbacks/google-callback/google-callback.component';
 import { NewPatientComponent } from './component/patients/new-patient/new-patient.component';
 import { PatientDetailComponent } from './component/patients/patient-detail/patient-detail.component';
 import { NewNoteModalComponent } from './component/patients/new-note-modal/new-note-modal.component';
@@ -38,8 +36,6 @@ import {MatDialogModule} from "@angular/material/dialog";
     PatientsComponent,
     ContactsComponent,
     RegistrationComponent,
-    GithubCallbackComponent,
-    GoogleCallbackComponent,
     NewPatientComponent,
     PatientDetailComponent,
     NewNoteModalComponent

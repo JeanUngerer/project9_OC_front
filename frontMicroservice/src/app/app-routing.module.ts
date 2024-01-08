@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./component/login/login.component";
-import {GithubCallbackComponent} from "./component/login/providerCallbacks/github-callback/github-callback.component";
-import {GoogleCallbackComponent} from "./component/login/providerCallbacks/google-callback/google-callback.component";
 import {HomeComponent} from "./component/home/home.component";
 import {AuthGuard} from "./core/guards/auth.guard";
 import {AppComponent} from "./app.component";
@@ -27,7 +25,7 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
   },
   {
-    path: 'transfer',
+    path: 'patients',
     component: PatientsComponent,
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
@@ -42,19 +40,15 @@ const routes: Routes = [
   },
   {
     path: 'newPatient',
-    component: NewPatientComponent
-  },
-  {
-    path: 'login/callback/github',
-    component: GithubCallbackComponent
-  },
-  {
-    path: 'login/callback/google',
-    component: GoogleCallbackComponent
+    component: NewPatientComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
   },
   {
     path: 'patient/:id',
     component: PatientDetailComponent,
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
   },
   {
     path: 'login',

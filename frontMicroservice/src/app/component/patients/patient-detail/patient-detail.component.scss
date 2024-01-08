@@ -1,1 +1,9 @@
 @import "../patients.component";
+
+
+.a-detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 16em;
+}

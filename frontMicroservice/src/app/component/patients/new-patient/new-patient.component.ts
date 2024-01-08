@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {PatientService} from "../../../core/services/patient.service";
 import {Adresse, Patient} from "../../../core/models/patient.model";
 import {logMessages} from "@angular-devkit/build-angular/src/builders/browser-esbuild/esbuild";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-patient',
@@ -13,6 +14,7 @@ export class NewPatientComponent {
 
   constructor(
     private patientService: PatientService,
+    private router: Router,
   ) {
   }
 
@@ -58,6 +60,8 @@ export class NewPatientComponent {
       // @ts-ignore
       phone: this.form.get('phone').value,
     };
-    this.patientService.newPatient(patient).subscribe(r => console.log(r));
+    this.patientService.newPatient(patient).subscribe(
+      r => this.router.navigate(['./patients'])
+    );
   }
 }
