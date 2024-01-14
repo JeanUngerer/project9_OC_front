@@ -19,9 +19,6 @@ export class TopNavComponent implements OnInit{
     private userService: UserService,
   ) {}
 
-  latestBalanceUpdate$ = this.userService.latestBalanceUpdateSubject
-    .asObservable()
-
   myBalance : string = '0';
 
   myIdentifier? : string = "";
@@ -36,20 +33,11 @@ export class TopNavComponent implements OnInit{
         this.logged = this.authService.isLoggedIn();
         console.log("UPDATE username : ", v)}
     })
-
-    this.userService.isLoadingGeneralData.subscribe({
-      next: (v) => {this.myBalance = v.toString();
-        this.logged = this.authService.isLoggedIn();
-        console.log("UPDATE BALANCE : ", v)}
-    })
   }
   handleClickLogout() {
     this.authService.logout();
   }
 
-  handleBalanceChange(){
-    return this.latestBalanceUpdate$.pipe(r => {this.myBalance = this.userService.getMyBalance().toString(); return of(null)})
-  }
 
 
 

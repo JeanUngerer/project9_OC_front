@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GithubCallbackComponent } from './github-callback.component';
+import { NewNoteModalComponent } from './new-note-modal.component';
 
-describe('GithubCallbackComponent', () => {
-  let component: GithubCallbackComponent;
-  let fixture: ComponentFixture<GithubCallbackComponent>;
+describe('NewNoteModalComponent', () => {
+  let component: NewNoteModalComponent;
+  let fixture: ComponentFixture<NewNoteModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GithubCallbackComponent ]
+      declarations: [ NewNoteModalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GithubCallbackComponent);
+    fixture = TestBed.createComponent(NewNoteModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

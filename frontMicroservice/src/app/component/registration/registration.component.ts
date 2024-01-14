@@ -39,11 +39,11 @@ export class RegistrationComponent {
     this.submitted = true;
     if (this.isValid()) {
       this.authService.register({
-        username: this.username ? this.username : '',
-        email: this.email ? this.email : '',
+        userName: this.username ? this.username : '',
+        mail: this.email ? this.email : '',
         password: this.password ? this.password : '',
-        firstname: this.firstname ? this.firstname : '',
-        lastname: this.lastname ? this.lastname : '',
+        firstName: this.firstname ? this.firstname : '',
+        lastName: this.lastname ? this.lastname : '',
       }).subscribe({
         next:(r) => {console.log("RESULT : ", r); this.handleAuthSuccess()},
         error:(err) => this.handleAuthError(err)}

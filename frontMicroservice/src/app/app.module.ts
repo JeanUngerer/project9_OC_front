@@ -12,14 +12,17 @@ import { ErrorMessageComponent } from './shared/components/error-message/error-m
 import { HomeComponent } from './component/home/home.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { UserInfoComponent } from './component/user-info/user-info.component';
-import { TransferComponent } from './component/transfer/transfer.component';
+import { PatientsComponent } from './component/patients/patients.component';
 import { ContactsComponent } from './component/contacts/contacts.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import { NgSelectModule } from '@ng-select/ng-select';
-import { GithubCallbackComponent } from './component/login/providerCallbacks/github-callback/github-callback.component';
-import { GoogleCallbackComponent } from './component/login/providerCallbacks/google-callback/google-callback.component';
+import { NewPatientComponent } from './component/patients/new-patient/new-patient.component';
+import { PatientDetailComponent } from './component/patients/patient-detail/patient-detail.component';
+import { NewNoteModalComponent } from './component/patients/new-note-modal/new-note-modal.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -30,11 +33,12 @@ import { GoogleCallbackComponent } from './component/login/providerCallbacks/goo
     ErrorMessageComponent,
     HomeComponent,
     UserInfoComponent,
-    TransferComponent,
+    PatientsComponent,
     ContactsComponent,
     RegistrationComponent,
-    GithubCallbackComponent,
-    GoogleCallbackComponent
+    NewPatientComponent,
+    PatientDetailComponent,
+    NewNoteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { GoogleCallbackComponent } from './component/login/providerCallbacks/goo
     MatTableModule,
     NgSelectModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

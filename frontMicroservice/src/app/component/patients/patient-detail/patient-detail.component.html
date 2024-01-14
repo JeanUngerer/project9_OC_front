@@ -1,0 +1,62 @@
+<div class="page-container">
+
+  <div class="transferModal">
+    <div class="content">
+
+      <div class="transfer-form display-card">
+
+        <h4 style="color: darkred">Health Status ==> Patient risk : {{patientRisk}}</h4>
+        <h5 class="a-detail"> <div>Firstname: </div><div>{{patient.firstName}}</div></h5>
+        <h5 class="a-detail"><div>Lastname: </div><div>{{patient.lastName}}</div></h5>
+        <h5 class="a-detail"><div>Genra: </div><div>{{patient.genra}}</div></h5>
+        <h5 class="a-detail"><div>Birthdate: </div><div>{{patient.birthdate}}</div></h5>
+        <h5 class="a-detail"><div>Phone: </div><div>{{patient.phone}}</div></h5>
+        <h5 class="a-detail"><div>Adresse: </div><div>{{patient.adresse.number}} rue {{patient.adresse.street}}</div></h5>
+      </div>
+
+
+      <br>
+      <label class="mat-card-title label">List of notes</label>
+      <div class="display-card">
+
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="author">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <th class="topraw" mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.dateTime}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="object">
+            <th mat-header-cell *matHeaderCellDef> Object </th>
+            <td mat-cell *matCellDef="let element" > {{element.note.substring(0, 50)}} </td>
+          </ng-container>
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+              (click)="editNote(row._id, row.note)" class="clickable"></tr>
+        </table>
+
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 20, 50]"
+          [pageSize]="10"
+          showFirstLastButtons
+        >
+        </mat-paginator>
+
+
+        <button (click)="newNote()" class="button button-validate button-home">
+          Add new note
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</div>

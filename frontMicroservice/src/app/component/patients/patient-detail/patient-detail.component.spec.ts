@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GoogleCallbackComponent } from './google-callback.component';
+import { PatientDetailComponent } from './patient-detail.component';
 
-describe('GoogleCallbackComponent', () => {
-  let component: GoogleCallbackComponent;
-  let fixture: ComponentFixture<GoogleCallbackComponent>;
+describe('PatientDetailComponent', () => {
+  let component: PatientDetailComponent;
+  let fixture: ComponentFixture<PatientDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GoogleCallbackComponent ]
+      declarations: [ PatientDetailComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GoogleCallbackComponent);
+    fixture = TestBed.createComponent(PatientDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

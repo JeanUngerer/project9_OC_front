@@ -5,7 +5,7 @@ import {Transfer} from "../../core/models/transfer.model";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {TransferService} from "../../core/services/transfer.service";
+import {PatientService} from "../../core/services/patient.service";
 import {identity} from "rxjs";
 
 @Component({
